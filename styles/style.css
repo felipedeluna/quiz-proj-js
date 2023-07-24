@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -22,4 +23,7 @@ form{
 }
 button{
     padding: 10px;
+}
+ul{
+    list-style: none;
 }
