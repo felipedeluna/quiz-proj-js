@@ -22,8 +22,7 @@
 
 <body>
     <main>
-
-
+        <div id="pagina-inicial">
         <div class="title">
             <h1>Teste seu conhecimento em programação!</h1>
             <h2>Coloque seu nome, escolha um tema e clique em iniciar</h2>
@@ -43,7 +42,175 @@
 
             <button type="button">Inicie o quiz</button>
         </form>
+        </div>
+        <div id="questionario-html">
+            <h1>Quiz - Tema HTML</h1>
 
+            <!-- Q1 -->
+            <section>
+                <h2>
+                    1. Qual atributo HTML é usado para definir um hiperlink?
+                </h2>
+                    <ul>
+                        <li>
+                            <input type="radio" name="answer1" id="a">
+                            <label for="a">a) src</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer1" id="b">
+                            <label for="b">b) link</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer1" id="c">
+                            <label for="c">c) href</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer1" id="d">
+                            <label for="d">d) url</label>
+                        </li>
+                    </ul>
+            </section>
+        
+            <!-- Q2 -->
+            <section>
+                <h2>
+                    2. Qual é a finalidade da tag HTML "p"?
+                </h2>
+                    <ul>
+                        <li>
+                            <input type="radio" name="answer2" id="a">
+                            <label for="a">a) Criar um link para outra página.</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer2" id="b">
+                            <label for="b">b) Definir um parágrafo de texto.</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer2" id="c">
+                            <label for="c">c) Inserir uma imagem na página.</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer2" id="d">
+                            <label for="d">d) Criar uma lista ordenada.</label>
+                        </li>
+                    </ul>
+            </section>
+        
+            <!-- Q3 -->
+            <section>
+                <h2>
+                    3. Qual é o elemento HTML usado para criar uma lista não ordenada?
+                </h2>
+        
+                <ul>
+                        <li>
+                            <input type="radio" name="answer3" id="a">
+                            <label for="a">a) ul</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer3" id="b">
+                            <label for="b">b) li</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer3" id="c">
+                            <label for="c">c) ol</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer3" id="d">
+                            <label for="d">d) list</label>
+                        </li>
+                    </ul>
+            </section>
+        
+            <button id="submit">Concluir</button>
+            <button>Voltar ao inicio</button>
+        </div>
+        <div id="questionario-css">
+
+        </div>
+        <div id="questionario-js">
+            
+        </div>
+        <div id="rank">
+            <section id="resultados">
+                <h1>Resultados</h1>
+                <table>
+                    <thead>
+                        <th>Nome</th>
+                        <th>Tema</th>
+                        <th>Tempo</th>
+                        <th>Data Quiz</th>
+                        <th>Pontuação</th>
+                    </thead>
+                    <tbody id="tabela-resultados">
+                        <tr>
+                            <td>Serafim</td>
+                            <td>HTML</td>
+                            <td>13:25</td>
+                            <td>Date</td>
+                            <td>10/10</td>
+                        </tr>
+                        <tr>
+                            <td>Medusa</td>
+                            <td>HTML</td>
+                            <td>11:45</td>
+                            <td>Date</td>
+                            <td>8/10</td>
+                        </tr>
+                        <tr>
+                            <td>Querubim</td>
+                            <td>JS</td>
+                            <td>09:27</td>
+                            <td>Date</td>
+                            <td>9/10</td>
+                        </tr>
+                        <tr>
+                            <td>Serafim</td>
+                            <td>CSS</td>
+                            <td>12:38</td>
+                            <td>Date</td>
+                            <td>10/10</td>
+                        </tr>
+                        <tr>
+                            <td>Querubim</td>
+                            <td>HTML</td>
+                            <td>13:55</td>
+                            <td>Date</td>
+                            <td>10/10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="medias">
+                <div>
+                    <p id="acertos"></p>
+                    <p id="erros"></p>
+                </div>
+            </section>
+            <section id="rankeamento">
+                <div>
+                    <h3>HTML</h3>
+                    <ol>
+                        <li>Serafim</li>
+                        <li>Querubim</li>
+                        <li>Medusa</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>CSS</h3>
+                    <ol>
+                        <li>Serafim</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>JS</h3>
+                    <ol>
+                        <li>Querubim</li>
+                    </ol>
+                </div>
+            </section>
+            <button>Novo Quiz</button>
+        </div>
     </main>
     <script defer type="module" src="./scripts/script.js"></script>
 </body>
