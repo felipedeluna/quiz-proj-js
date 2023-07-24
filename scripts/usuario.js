@@ -1,3 +1,4 @@
+import rank from './rank'
 
 const user = {
     nome: "",
@@ -40,4 +41,9 @@ function limparUsuario(){
     user.data = ""
     user.tempo_para_conclusao = ""
     user.acertos = 0
+}
+
+function salvarResultado(){
+    rank.push(user)
+    limparUsuario()
 }
