@@ -1,4 +1,4 @@
-import rank from './rank'
+import rank from './rank.js'
 
 const user = {
     nome: "",
@@ -47,3 +47,5 @@ function salvarResultado(){
     rank.push(user)
     limparUsuario()
 }
+
+export {user, setNome, setTema, setData_inicio_quiz, setTempo_para_conclusao, acertou, limparUsuario, salvarResultado};
