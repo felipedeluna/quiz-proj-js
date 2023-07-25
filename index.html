@@ -22,116 +22,72 @@
 
 <body>
     <main>
-        <div id="pagina-inicial">
-        <div class="title">
-            <h1>Teste seu conhecimento em programação!</h1>
-            <h2>Coloque seu nome, escolha um tema e clique em iniciar</h2>
+        <div id="container-pagina-inicial">
+            <div class="title">
+                <h1>Teste seu conhecimento em programação!</h1>
+                <h2>Coloque seu nome, escolha um tema e clique em iniciar</h2>
+            </div>
+
+            <form class="form-inicial">
+                <label for="nome">Nome : </label>
+                <input type="text" name="nome" id=""><br><br>
+
+                <label for="temas">Escolha um tema : </label>
+                <select name="temas" id="tema">
+                    <option value=""></option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JAVASCRIPT</option>
+                </select><br><br>
+
+                <button id="btn-iniciar" type="button">Inicie o quiz</button>
+            </form>
         </div>
 
-        <form>
-            <label for="nome">Nome : </label>
-            <input type="text" name="nome" id=""><br><br>
+        <div class="container display-none" id="container-html">
 
-            <label for="temas">Escolha um tema : </label>
-            <select name="temas" id="">
-                <option value=""></option>
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="javascript">JAVASCRIPT</option>
-            </select><br><br>
+            <h2>QUIZ HTML</h2>
 
-            <button type="button">Inicie o quiz</button>
-        </form>
-        </div>
-        <div id="questionario-html">
-            <h1>Quiz - Tema HTML</h1>
+            <div id="questionario-html">
+                <!-- QUIZ -->
+            </div>
 
-            <!-- Q1 -->
-            <section>
-                <h2>
-                    1. Qual atributo HTML é usado para definir um hiperlink?
-                </h2>
-                    <ul>
-                        <li>
-                            <input type="radio" name="answer1" id="a">
-                            <label for="a">a) src</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer1" id="b">
-                            <label for="b">b) link</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer1" id="c">
-                            <label for="c">c) href</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer1" id="d">
-                            <label for="d">d) url</label>
-                        </li>
-                    </ul>
-            </section>
-        
-            <!-- Q2 -->
-            <section>
-                <h2>
-                    2. Qual é a finalidade da tag HTML "p"?
-                </h2>
-                    <ul>
-                        <li>
-                            <input type="radio" name="answer2" id="a">
-                            <label for="a">a) Criar um link para outra página.</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer2" id="b">
-                            <label for="b">b) Definir um parágrafo de texto.</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer2" id="c">
-                            <label for="c">c) Inserir uma imagem na página.</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer2" id="d">
-                            <label for="d">d) Criar uma lista ordenada.</label>
-                        </li>
-                    </ul>
-            </section>
-        
-            <!-- Q3 -->
-            <section>
-                <h2>
-                    3. Qual é o elemento HTML usado para criar uma lista não ordenada?
-                </h2>
-        
-                <ul>
-                        <li>
-                            <input type="radio" name="answer3" value="a">
-                            <label for="a">a) ul</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer3" value="b">
-                            <label for="b">b) li</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer3" value="c">
-                            <label for="c">c) ol</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="answer3" value="d">
-                            <label for="d">d) list</label>
-                        </li>
-                    </ul>
-            </section>
-        
-            <button id="concluir-html">Concluir</button>
-            <button>Voltar ao inicio</button>
-        </div>
-        <div id="questionario-css">
+            <button class="btn-concluir" id="concluir-html">Concluir</button>
+            <button class="btn-voltar-inicio">Voltar ao inicio</button>
 
         </div>
-        <div id="questionario-js">
-            
+
+
+        <div class="container display-none" id="container-css">
+
+            <h2>QUIZ CSS</h2>
+
+            <div id="questionario-css">
+
+            </div>
+
+
+            <button class="btn-concluir" id="concluir-css">Concluir</button>
+            <button class="btn-voltar-inicio">Voltar ao inicio</button>
+
         </div>
-        <div id="rank">
+
+        <div class="container display-none" id="container-javascript">
+
+            <h2>QUIZ Javascript</h2>
+
+            <div id="questionario-js">
+
+            </div>
+
+
+            <button class="btn-concluir" id="concluir-js">Concluir</button>
+            <button class="btn-voltar-inicio">Voltar ao inicio</button>
+        </div>
+
+
+
+        <div class="container display-none" id="container-rank">
             <section id="resultados">
                 <h1>Resultados</h1>
                 <table>
@@ -209,10 +165,11 @@
                     </ol>
                 </div>
             </section>
-            <button>Novo Quiz</button>
+            <button id="btn-novo-quiz">Novo Quiz</button>
         </div>
     </main>
     <script defer type="module" src="./scripts/script.js"></script>
+    <script defer type="module" src="./scripts/render.js"></script>
 </body>
 
 </html>
