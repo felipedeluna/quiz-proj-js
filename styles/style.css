@@ -13,6 +13,14 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+}
+.title h1{
+    margin: 20px;
+}
+#container-pagina-inicial{
+    border: 1px solid gray;
+    padding: 30px;
 }
 
 .container{
@@ -26,12 +34,14 @@ main{
     font-size: 30px;
 }
 .form-inicial{
-    margin-top: 20px;
+    margin: 20px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    width: 60%;
+
 }
-.form-inicial input, select{
+.form-inicial input,.form-inicial select, .form-inicial button{
     padding: 10px;
     margin: 10px 0;
 }
@@ -61,4 +71,10 @@ form{
     padding: 10px;
     margin: 5px 0;
     width: 800px;
+}
+
+.questionario{
+    height: 75vh;
+    overflow: auto;
+    margin-bottom: 20px;
 }
