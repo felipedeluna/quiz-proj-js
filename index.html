@@ -30,16 +30,14 @@
 
             <form class="form-inicial">
                 <label for="nome">Nome : </label>
-                <input type="text" name="nome" id=""><br><br>
-
-                <label for="temas">Escolha um tema : </label>
-                <select name="temas" id="tema">
-                    <option value=""></option>
+                <input type="text" name="nome" id="" required><br><br>
+                <label for="temas" >Escolha um tema : </label>
+                <select name="temas" id="tema" required>
+                    <option selected disabled value="null">--Selecione um tema--</option>
                     <option value="html">HTML</option>
                     <option value="css">CSS</option>
                     <option value="javascript">JAVASCRIPT</option>
                 </select><br><br>
-
                 <button id="btn-iniciar" type="button">Inicie o quiz</button>
             </form>
         </div>
@@ -48,7 +46,7 @@
 
             <h2>QUIZ HTML</h2>
 
-            <div id="questionario-html">
+            <div id="questionario-html" class="questionario">
                 <!-- QUIZ -->
             </div>
 
@@ -62,7 +60,7 @@
 
             <h2>QUIZ CSS</h2>
 
-            <div id="questionario-css">
+            <div id="questionario-css" class="questionario">
 
             </div>
 
@@ -76,7 +74,7 @@
 
             <h2>QUIZ Javascript</h2>
 
-            <div id="questionario-js">
+            <div id="questionario-js" class="questionario">
 
             </div>
 
@@ -84,8 +82,6 @@
             <button class="btn-concluir" id="concluir-js">Concluir</button>
             <button class="btn-voltar-inicio">Voltar ao inicio</button>
         </div>
-
-
 
         <div class="container display-none" id="container-rank">
             <section id="resultados">

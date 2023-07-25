@@ -43,8 +43,6 @@ btn_concluir.forEach((btn) => {
 
 
 
-
-
 // recebe o "modulo" para fazer um ForEach e renderizar os dados no container "id_container"
 function renderizarQuiz(modulo, id_container) {
 
