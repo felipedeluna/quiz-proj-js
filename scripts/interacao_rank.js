@@ -1,13 +1,20 @@
-function dadosTabela() {
-    const tabela = document.querySelector("#tabela-resultados")
-    for(users of user) {
-    tabela.innerHTML += `
-    <td>${user.nome}</td>
-    <td>${user.tema}</td>
-    <td>${user.tempo_para_conclusao}</td>
-    <td>${user.data}</td>
-    <td>${user.acertos}/10 </td>
-    `
+import rank from "./models/rank.js";
+
+export function dadosTabela(rank) {
+    const tabela = document.querySelector("#tabela-resultados");
+
+    for (const rank of rankData) {
+        // Renomeando 'rank' para 'rankData'
+        const tabelaEstrutura = `
+        <tr>
+            <td>${rank.nome}</td>
+            <td>${rank.tema}</td>
+            <td>${rank.tempo_para_conclusao}</td>
+            <td>${rank.data}</td>
+            <td>${rank.acertos}/10</td>
+        </tr>
+        `;
+        tabela.innerHTML += tabelaEstrutura;
     }
 }
 
@@ -25,19 +32,11 @@ function medias(users) {
 
     const mediaNegativa = 10 - media;
     const erro = document.querySelector("#erros");
-    erro.innerHTML = `Média de erros: ${mediaNegativa.toFixed(2)}`
+    erro.innerHTML = `Média de erros: ${mediaNegativa.toFixed(2)}`;
 }
 
+function topTemaHtml() {}
 
+function topTemaCss() {}
 
-function topTemaHtml() {
-
-}
-
-function topTemaCss() {
-
-}
-
-function topTemaJs() {
-
-}
+function topTemaJs() {}
