@@ -3,10 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --cor-background-light:rgb(201, 201, 201);
+    --cor-background-dark:rgb(61, 61, 61);
+    --cor-background-container-light: white;
+    --cor-background-container-dark: ;
 }
 body{
     min-height: 100vh;
     font-family: sans-serif;
+    background-color: var(--cor-background-light);
 }
 main{
     display: flex;
@@ -15,18 +20,26 @@ main{
     align-items: center;
     min-height: 100vh;
 }
+
 .title h1{
     margin: 20px;
 }
 #container-pagina-inicial{
-    border: 1px solid gray;
+    border-radius: 35px;
     padding: 30px;
+    width: 800px;
 }
 
 .container{
     margin: 30px 0;
+    padding: 10px;
+    
 }
-
+.container h2{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+}
 .title{
     text-align: center;
 }
@@ -36,9 +49,11 @@ main{
 .form-inicial{
     margin: 20px auto;
     padding: 20px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 440px;
+    background-color: var(--cor-background-container-light);
 
 }
 .form-inicial input,.form-inicial select, .form-inicial button{
@@ -75,6 +90,9 @@ form{
 
 .questionario{
     height: 75vh;
+    padding: 10px;
+    border-radius: 25px;
     overflow: auto;
     margin-bottom: 20px;
+    background-color: var(--cor-background-container-light);
 }
