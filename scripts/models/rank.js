@@ -8,7 +8,7 @@ const rank = [
     },
     {
         nome: "Medusa",
-        tema: "",
+        tema: "css",
         data: '2023-07-24',                            
         tempo_para_conclusao: "",
         acertos: 7,
@@ -36,4 +36,4 @@ const rank = [
     },
 ]
 
-export default rank
+export {rank}

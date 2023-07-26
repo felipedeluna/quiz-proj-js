@@ -102,7 +102,7 @@ const respostas_js = [
     "Document Object Model - representa a estrutura de uma página HTML e permite interagir com ela",
     "parseInt()",
     "Uma sintaxe mais curta para declarar funções",
-    "for",
+    "for"
 ]
 
 export {JS, respostas_js}

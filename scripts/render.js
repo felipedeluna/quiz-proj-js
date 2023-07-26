@@ -1,6 +1,7 @@
 import { HTML } from './models/questionario_html.js'
 import { CSS } from './models/questionario_css.js'
 import { JS } from './models/questionario_js.js'
+import { rank } from './models/rank.js'
 
 function render(quiz){
 
@@ -10,8 +11,6 @@ function render(quiz){
     document.getElementById("container-css").classList.add("display-none")
     document.getElementById("container-javascript").classList.add("display-none")
     document.getElementById("container-rank").classList.add("display-none")
-
-
     // adiciona apenas o quiz solicitado
     const quiz_container = document.getElementById(`container-${quiz}`)
     quiz_container.classList.remove("display-none");
@@ -40,9 +39,6 @@ btn_concluir.forEach((btn) => {
     btn.addEventListener("click", () => render("rank"));
 });
 
-
-
-
 // recebe o "modulo" para fazer um ForEach e renderizar os dados no container "id_container"
 function renderizarQuiz(modulo, id_container) {
 
@@ -53,10 +49,10 @@ function renderizarQuiz(modulo, id_container) {
       const alternativasQuiz = pergunta.respostas
 
       
-      // o "String.fromCharCode(97 + i)" retorna um caractere da tabela ASCII com base em um valor numérico.
-        .map((resposta, i) => `
+      // o aqui imprime todas as alternaticas, o valor de cada alternatica é seu próprio texto
+        .map((resposta) => `
           <label>
-          <input type="radio" name="pergunta${index}" value="${String.fromCharCode(97 + i)}">
+          <input type="radio" name="pergunta${index + 1}" value="${resposta}">
           ${resposta}
           </label>
         `)
@@ -78,6 +74,26 @@ function renderizarQuiz(modulo, id_container) {
     
   }
 
+  function dadosTabela(rankData) {
+    const tabela = document.querySelector("#tabela-resultados");
+  
+    for (const rank of rankData) { // Renomeando 'rank' para 'rankData'
+      const tabelaEstrutura = `
+        <tr>
+          <td>${rank.nome}</td>
+          <td>${rank.tema}</td>
+          <td>${rank.tempo_para_conclusao}</td>
+          <td>${rank.data}</td>
+          <td>${rank.acertos}/10</td>
+        </tr>
+      `;
+      tabela.innerHTML += tabelaEstrutura;
+    }
+  }
+
   renderizarQuiz(HTML, "questionario-html");
   renderizarQuiz(CSS, "questionario-css");
   renderizarQuiz(JS, "questionario-js");
+  dadosTabela(rank);
+
+  
