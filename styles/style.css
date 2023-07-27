@@ -21,6 +21,21 @@ main{
     min-height: 100vh;
 }
 
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 30px;
+}
+button{
+    padding: 10px;
+}
+ul{
+    list-style: none;
+}
+form{
+    padding: 20px 0;
+}
 .title h1{
     margin: 20px;
 }
@@ -30,26 +45,12 @@ main{
     width: 800px;
 }
 
-.container{
-    margin: 30px 0;
-    padding: 10px;
-    
-}
-.container h2{
-    display: flex;
-    padding: 15px;
-    justify-content: center;
-}
 .title{
     text-align: center;
-}
-.title h2{
-    font-size: 30px;
 }
 .form-inicial{
     margin: 20px auto;
     padding: 20px;
-    border-radius: 25px;
     display: flex;
     flex-direction: column;
     width: 440px;
@@ -60,26 +61,27 @@ main{
     padding: 10px;
     margin: 10px 0;
 }
-button{
-    padding: 10px;
-}
-ul{
-    list-style: none;
-}
 .display-none{
     display:none;
 }
+.container{
+    margin:0;
+    padding: 0px;
+    min-height: 100vh;
+}
 
-h2{
-    font-size: 40px;
-    padding-bottom: 40px;
+.container h2{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+}
+.questionario h3, .questionario p{
+    display: inline-block;
+    margin-bottom: 10px;
 }
 .quiz-container label{
     display: block;
     padding: 5px 0;
-}
-form{
-    padding: 20px 0;
 }
 .quiz-container{
     border: 1px solid gray;
@@ -91,8 +93,70 @@ form{
 .questionario{
     height: 75vh;
     padding: 10px;
-    border-radius: 25px;
     overflow: auto;
     margin-bottom: 20px;
     background-color: var(--cor-background-container-light);
 }
+
+/* Estilizar a barra de rolagem vertical */
+.questionario::-webkit-scrollbar {
+    width: 1px; /* Largura da barra de rolagem */
+    }
+
+.questionario::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Cor de fundo da trilha da barra de rolagem */
+    }
+
+.questionario::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor da alça (thumb) da barra de rolagem */
+    }
+
+.botao-quiz{
+    display: flex;
+    justify-content: space-between;
+}
+
+#container-rank h1{
+    text-align: center;
+    font-size: 45px;
+    padding: 25px;
+}
+
+.infos-rank{
+    background-color: var(--cor-background-container-light);
+    width: 800px;
+    min-height: 80vh;
+}
+
+#resultados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resultados h2{
+    margin: 15px;
+}
+#resultados table{
+    width: 600px;
+    border-collapse: collapse;
+}
+#resultados th, #resultados td{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#rankeamento{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+#rankeamento div h3{
+    text-align: center;
+}
+
+#rankeamento ol {
+    list-style-position: inside; /* Coloca a numeração dentro do espaço da div */
+}
+
