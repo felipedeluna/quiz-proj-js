@@ -126,7 +126,7 @@ btn_concluir.forEach((btn) => {
       usuario.setAcertos(p)
       usuario.salvarResultado()
       dadosTabela(rank)
-      
+
     } else {
       alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
     }
@@ -134,9 +134,10 @@ btn_concluir.forEach((btn) => {
 });
   function dadosTabela(rankData) {
     const tabela = document.querySelector("#tabela-resultados");
-    let tabelaEstrutura = ""
+    tabela.innerHTML = ""
+
     for (const rank of rankData) { // Renomeando 'rank' para 'rankData'
-      tabelaEstrutura = `
+      let tabelaEstrutura = `
         <tr>
           <td>${rank.nome}</td>
           <td>${rank.tema}</td>
