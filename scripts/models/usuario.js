@@ -1,6 +1,6 @@
-// user.js
 import { rank } from "./rank.js"
 import { getDataAtualFormatada } from "../calc_data.js"
+
 
 export class User {
     constructor(nome, tema, tempo_de_inicio) {

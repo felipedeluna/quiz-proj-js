@@ -92,16 +92,15 @@ const HTML = [
 ];
 
 const respostas_html = [
-    "marcação",
-    "&lt;table&gt;&lt;/table&gt;",
-    "&lt;link&gt;",
-    "HyperText Markup Language",
-    "HTML5",
-    "&lt;ul&gt; e &lt;ol&gt;",
-    "&lt;img&gt;",
-    "Uma divisão genérica que pode ser usada para agrupar outros elementos",
-    "&lt;header&gt;",
-    "&lt;!-- Comentário --&gt;"
-]
+    'marcação', 
+    '<table></table>', 
+    '<link>', 
+    'HyperText Markup Language', 
+    'HTML5', 
+    '<ul> e <ol>', 
+    '<img>', 
+    'Uma divisão genérica que pode ser usada para agrupar outros elementos', 
+    '<header>', 
+    '\x3C!-- Comentário -->']
 
 export {HTML, respostas_html}
