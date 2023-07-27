@@ -1,51 +1,32 @@
-import { rank } from './rank.js'
+import { rank } from "./rank.js"
+import { getDataAtualFormatada } from "../calc_data.js"
 
-const user = {
-    nome: "",
-    tema: "",
-    data: new Date('2023-07-24'), //exemplo                            
-    tempo_para_conclusao: "",
-    acertos: 0,
+
+export class User {
+    constructor(nome, tema, tempo_de_inicio) {
+        this.nome = nome || ""
+        this.tema = tema || ""
+        this.data = getDataAtualFormatada()
+        this.tempo_de_inicio = tempo_de_inicio || ""
+        this.tempo_para_conclusao = ""
+        this.acertos = 0
+    }
+
+  setTempo_para_conclusao() {
+    const tempo = Math.abs(Date.now() - this.tempo_de_inicio) // Resultado em milissegundos
+    const segundos = Math.floor(tempo / 1000)
+    const minutos = Math.floor(segundos / 60)
+
+    this.tempo_para_conclusao = `${minutos}:${segundos}`
+  }
+
+  acertou() {
+    this.acertos += 1
+  }
+
+
+  salvarResultado() {
+    this.setTempo_para_conclusao()
+    rank.push(this)
+  }
 }
-
-function setNome(){
-    const nome = document.getElementById("nome")
-    user.nome = nome
-}
-
-function setTema(){
-    const tema = document.getElementById("tema")
-    user.tema = tema
-}
-
-function setData_inicio_quiz(){
-    user.data = Date.now()
-}
-
-function setTempo_para_conclusao(){
-    const tempo = Math.abs(Date.now() - user.data) // resultado em milesegundos
-
-    const segundos = Math.floor(tempo / 1000);
-    const minutos = Math.floor(segundos / 60);
-
-    user.tempo_para_conclusao = `${minutos}:${segundos}`
-}
-
-function acertou(){
-    user.acertos += 1
-}
-
-function limparUsuario(){
-    user.nome = ""
-    user.tema = ""
-    user.data = ""
-    user.tempo_para_conclusao = ""
-    user.acertos = 0
-}
-
-function salvarResultado(){
-    rank.push(user)
-    limparUsuario()
-}
-
-export {user, setNome, setTema, setData_inicio_quiz, setTempo_para_conclusao, acertou, limparUsuario, salvarResultado};
