@@ -1,7 +1,8 @@
-import { HTML } from './models/questionario_html.js'
-import { CSS } from './models/questionario_css.js'
-import { JS } from './models/questionario_js.js'
+import { HTML, respostas_html } from './models/questionario_html.js'
+import { CSS, respostas_css } from './models/questionario_css.js'
+import { JS, respostas_js } from './models/questionario_js.js'
 import { rank } from './models/rank.js'
+import {user, setNome, setTema, setData_inicio_quiz, setTempo_para_conclusao, acertou, limparUsuario, salvarResultado} from './models/usuario.js'
 
 //Função que renderiza a parte do HTML desejada, removendo todas as outras com o display-none
 
@@ -60,7 +61,7 @@ function renderizarQuiz(modulo, id_container, tema) {
       // o aqui imprime todas as alternaticas, o valor de cada alternatica é seu próprio texto
         .map((resposta) => `
           <label>
-          <input type="radio" name="pergunta${index + 1}-tema" value="${resposta}">
+          <input type="radio" name="pergunta${index + 1}" value="${resposta}">
           ${resposta}
           </label>
         `)
@@ -85,7 +86,7 @@ function renderizarQuiz(modulo, id_container, tema) {
   //botão localizado na página do quiz, ele finaliza o quiz e renderiza a página dos ranks
 
   function respostas_foram_respondidas(quiz) {
-    const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`);
+    const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`)
     const totalPerguntas = document.querySelectorAll(`#container-${quiz} input[type="radio"]`);
     return respostas.length === totalPerguntas.length/4;
 }
@@ -95,6 +96,35 @@ btn_concluir.forEach((btn) => {
   btn.addEventListener("click", () => {
     const quiz = btn.getAttribute("tema");
     if (respostas_foram_respondidas(quiz)) {
+      let p = 0
+      const respostasCliente = [
+        document.querySelector('input[name="pergunta1"]:checked').value,
+        document.querySelector('input[name="pergunta2"]:checked').value,
+        document.querySelector('input[name="pergunta3"]:checked').value,
+        document.querySelector('input[name="pergunta4"]:checked').value,
+        document.querySelector('input[name="pergunta5"]:checked').value,
+        document.querySelector('input[name="pergunta6"]:checked').value,
+        document.querySelector('input[name="pergunta7"]:checked').value,
+        document.querySelector('input[name="pergunta8"]:checked').value,
+        document.querySelector('input[name="pergunta9"]:checked').value,
+        document.querySelector('input[name="pergunta10"]:checked').value,
+      ]
+      for(let i = 0; i < 10; i++){
+        if(respostasCliente[i] === respostas_js[i]){
+          acertou()
+          p++
+        } else if(respostasCliente[i] === respostas_html[i]){
+          acertou()
+          p++
+        } else if(respostasCliente[i] === respostas_css[i]){
+          acertou()
+          p++
+        }
+      }
+      console.log(`Você acertou ${p}/${respostasCliente.length}`);
+
+      console.log(respostasCliente)
+      console.log(respostas_css)
       render("rank");
     } else {
       alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
