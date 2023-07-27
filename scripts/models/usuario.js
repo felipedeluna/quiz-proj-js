@@ -1,4 +1,4 @@
-import rank from './rank.js'
+import { rank } from './rank.js'
 
 const user = {
     nome: "",
