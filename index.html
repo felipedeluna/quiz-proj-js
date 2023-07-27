@@ -48,10 +48,10 @@
             <div id="questionario-html" class="questionario">
                 <!-- QUIZ -->
             </div>
-
-            <button class="btn-concluir" id="concluir-html" tema="html">Concluir</button>
-            <button class="btn-voltar-inicio">Voltar ao inicio</button>
-
+            <div class="botao-quiz">
+                <button class="btn-voltar-inicio">Voltar ao inicio</button>
+                <button class="btn-concluir" id="concluir-html" tema="html">Concluir</button>
+            </div>
         </div>
 
 
@@ -63,10 +63,10 @@
 
             </div>
 
-
-            <button class="btn-concluir" id="concluir-css" tema="css">Concluir</button>
-            <button class="btn-voltar-inicio">Voltar ao inicio</button>
-
+            <div class="botao-quiz">
+                <button class="btn-voltar-inicio">Voltar ao inicio</button>
+                <button class="btn-concluir" id="concluir-css" tema="css">Concluir</button>
+            </div>
         </div>
 
         <div class="container display-none" id="container-javascript">
@@ -77,14 +77,19 @@
 
             </div>
 
-
-            <button class="btn-concluir" id="concluir-js" tema="javascript">Concluir</button>
-            <button class="btn-voltar-inicio">Voltar ao inicio</button>
+            <div class="botao-quiz">
+                <button class="btn-voltar-inicio">Voltar ao inicio</button>
+                <button class="btn-concluir" id="concluir-js" tema="javascript">Concluir</button>
+            </div>
         </div>
 
         <div class="container display-none" id="container-rank">
+
+            <h1>Relatórios</h1>
+
+        <div class="infos-rank">
             <section id="resultados">
-                <h1>Resultados</h1>
+                <h2>Resultados</h2>
                 <table>
                     <thead>
                         <th>Nome</th>
@@ -126,6 +131,7 @@
                     </ol>
                 </div>
             </section>
+        </div>
             <button id="btn-novo-quiz">Novo Quiz</button>
         </div>
     </main>
