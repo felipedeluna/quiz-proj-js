@@ -1,4 +1,4 @@
-import {user, setNome, setTema, setData_inicio_quiz, setTempo_para_conclusao, acertou, limparUsuario, salvarResultado} from "./models/usuario.js"
+import {user, setTempo_para_conclusao, acertou, limparUsuario, salvarResultado} from "./models/usuario.js"
 
 const concluir_html = document.querySelector('#concluir-html')
 

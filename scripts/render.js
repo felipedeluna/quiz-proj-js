@@ -2,8 +2,10 @@ import { HTML } from './models/questionario_html.js'
 import { CSS } from './models/questionario_css.js'
 import { JS } from './models/questionario_js.js'
 import { rank } from './models/rank.js'
+import { User } from './models/usuario.js'
 
 //Função que renderiza a parte do HTML desejada, removendo todas as outras com o display-none
+
 
 function render(quiz){
 
@@ -21,6 +23,8 @@ function render(quiz){
 
 //verificação da página inicial
 
+let usuario
+
 const btn_iniciar = document.getElementById("btn-iniciar")
 btn_iniciar.addEventListener("click", ()=>{
     const tema = document.getElementById("tema").value
@@ -31,6 +35,7 @@ btn_iniciar.addEventListener("click", ()=>{
       window.alert("Digite o seu nome!")
     }
     else{
+      usuario = new User(nome, tema, Date.now())
       render(tema)
     }
 })
@@ -84,7 +89,7 @@ function renderizarQuiz(modulo, id_container, tema) {
 
   //botão localizado na página do quiz, ele finaliza o quiz e renderiza a página dos ranks
 
-  function respostas_foram_respondidas(quiz) {
+function respostas_foram_respondidas(quiz) {
     const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`);
     const totalPerguntas = document.querySelectorAll(`#container-${quiz} input[type="radio"]`);
     return respostas.length === totalPerguntas.length/4;
@@ -95,7 +100,8 @@ btn_concluir.forEach((btn) => {
   btn.addEventListener("click", () => {
     const quiz = btn.getAttribute("tema");
     if (respostas_foram_respondidas(quiz)) {
-      render("rank");
+      usuario.salvarResultado()
+      dadosTabela(rank)
     } else {
       alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
     }
@@ -103,9 +109,9 @@ btn_concluir.forEach((btn) => {
 });
   function dadosTabela(rankData) {
     const tabela = document.querySelector("#tabela-resultados");
-  
+    let tabelaEstrutura = ""
     for (const rank of rankData) { // Renomeando 'rank' para 'rankData'
-      const tabelaEstrutura = `
+      tabelaEstrutura = `
         <tr>
           <td>${rank.nome}</td>
           <td>${rank.tema}</td>
@@ -116,11 +122,14 @@ btn_concluir.forEach((btn) => {
       `;
       tabela.innerHTML += tabelaEstrutura;
     }
+
+    render("rank");
   }
 
   renderizarQuiz(HTML, "questionario-html", "html");
   renderizarQuiz(CSS, "questionario-css", "css");
   renderizarQuiz(JS, "questionario-js", "js");
-  dadosTabela(rank);
+  
+
 
   
