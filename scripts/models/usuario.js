@@ -20,8 +20,8 @@ export class User {
     this.tempo_para_conclusao = `${minutos}:${segundos}`
   }
 
-  acertou() {
-    this.acertos += 1
+  setAcertos(num) {
+    this.acertos = num
   }
 
 

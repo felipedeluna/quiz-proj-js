@@ -115,21 +115,18 @@ btn_concluir.forEach((btn) => {
       ]
       for(let i = 0; i < 10; i++){
         if(respostasCliente[i] === respostas_js[i]){
-          acertou()
           p++
         } else if(respostasCliente[i] === respostas_html[i]){
-          acertou()
           p++
         } else if(respostasCliente[i] === respostas_css[i]){
-          acertou()
           p++
         }
       }
-      console.log(`Você acertou ${p}/${respostasCliente.length}`);
 
-      console.log(respostasCliente)
-      console.log(respostas_css)
-      render("rank");
+      usuario.setAcertos(p)
+      usuario.salvarResultado()
+      dadosTabela(rank)
+      
     } else {
       alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
     }
