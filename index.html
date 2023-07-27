@@ -29,15 +29,15 @@
 
             <form class="form-inicial">
                 <label for="nome">Nome : </label>
-                <input type="text" placeholder="Digite o seu nome" name="nome" id="" required><br><br>
+                <input type="text" placeholder="Digite o seu nome" name="nome" id="nomeusu" required>
                 <label for="temas" >Escolha um tema : </label>
                 <select name="temas" id="tema" required>
-                    <option selected disabled value=null>--Selecione um tema--</option>
+                    <option selected disabled value="null">--Selecione um tema--</option>
                     <option value="html">HTML</option>
                     <option value="css">CSS</option>
                     <option value="javascript">JAVASCRIPT</option>
                 </select><br><br>
-                <button id="btn-iniciar" type="submit">Inicie o quiz</button>
+                <button id="btn-iniciar" type="button">Inicie o quiz</button>
             </form>
         </div>
 
@@ -49,7 +49,7 @@
                 <!-- QUIZ -->
             </div>
 
-            <button class="btn-concluir" id="concluir-html">Concluir</button>
+            <button class="btn-concluir" id="concluir-html" tema="html">Concluir</button>
             <button class="btn-voltar-inicio">Voltar ao inicio</button>
 
         </div>
@@ -64,7 +64,7 @@
             </div>
 
 
-            <button class="btn-concluir" id="concluir-css">Concluir</button>
+            <button class="btn-concluir" id="concluir-css" tema="css">Concluir</button>
             <button class="btn-voltar-inicio">Voltar ao inicio</button>
 
         </div>
@@ -78,7 +78,7 @@
             </div>
 
 
-            <button class="btn-concluir" id="concluir-js">Concluir</button>
+            <button class="btn-concluir" id="concluir-js" tema="javascript">Concluir</button>
             <button class="btn-voltar-inicio">Voltar ao inicio</button>
         </div>
 

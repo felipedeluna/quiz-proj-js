@@ -3,6 +3,8 @@ import { CSS } from './models/questionario_css.js'
 import { JS } from './models/questionario_js.js'
 import { rank } from './models/rank.js'
 
+//Função que renderiza a parte do HTML desejada, removendo todas as outras com o display-none
+
 function render(quiz){
 
     // remover todos os quizes da tela
@@ -17,54 +19,60 @@ function render(quiz){
 
 }
 
+//verificação da página inicial
 
 const btn_iniciar = document.getElementById("btn-iniciar")
 btn_iniciar.addEventListener("click", ()=>{
     const tema = document.getElementById("tema").value
-    render(tema)
+    const nome = document.querySelector("#nomeusu").value
+    if( tema == "null"){
+      window.alert("Selecione um tema válido!")
+    }else if(nome == ""){
+      window.alert("Digite o seu nome!")
+    }
+    else{
+      render(tema)
+    }
 })
+
+//botão localizado na página do rank, ele renderiza a seleção dos quizes
 
 const btn_novo_quiz = document.getElementById("btn-novo-quiz")
 btn_novo_quiz.addEventListener("click", ()=>{
     render("pagina-inicial")
 })
 
+//botão localizado na página do quiz, ele renderiza a seleção dos quizes
+
 const btn_voltar_inicio = document.querySelectorAll(".btn-voltar-inicio");
 btn_voltar_inicio.forEach((btn) => {
     btn.addEventListener("click", () => render("pagina-inicial"));
 });
 
-const btn_concluir = document.querySelectorAll(".btn-concluir");
-btn_concluir.forEach((btn) => {
-    btn.addEventListener("click", () => render("rank"));
-});
-
 // recebe o "modulo" para fazer um ForEach e renderizar os dados no container "id_container"
-function renderizarQuiz(modulo, id_container) {
+function renderizarQuiz(modulo, id_container, tema) {
 
     const containerQuiz = document.getElementById(id_container)
-
     modulo.forEach((pergunta, index) => {
 
       const alternativasQuiz = pergunta.respostas
-
       
       // o aqui imprime todas as alternaticas, o valor de cada alternatica é seu próprio texto
         .map((resposta) => `
           <label>
-          <input type="radio" name="pergunta${index + 1}" value="${resposta}">
+          <input type="radio" name="pergunta${index + 1}-tema" value="${resposta}">
           ${resposta}
           </label>
         `)
         .join("");
-
+        
       const perguntaQuiz = `
-        <div class="quiz-container">
+        <div class="quiz-container-${tema} quiz-container">
           <h3>Pergunta ${index + 1}:</h3>
           <p>${pergunta.pergunta}</p>
-          <form>
+          <div id="questao-${index + 1}-${tema}">
             ${alternativasQuiz}
-          </form>
+          </div>
         </div>
       `;
       containerQuiz.innerHTML += perguntaQuiz;
@@ -74,6 +82,25 @@ function renderizarQuiz(modulo, id_container) {
     
   }
 
+  //botão localizado na página do quiz, ele finaliza o quiz e renderiza a página dos ranks
+
+  function respostas_foram_respondidas(quiz) {
+    const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`);
+    const totalPerguntas = document.querySelectorAll(`#container-${quiz} input[type="radio"]`);
+    return respostas.length === totalPerguntas.length/4;
+}
+
+const btn_concluir = document.querySelectorAll(".btn-concluir");
+btn_concluir.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const quiz = btn.getAttribute("tema");
+    if (respostas_foram_respondidas(quiz)) {
+      render("rank");
+    } else {
+      alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
+    }
+  });
+});
   function dadosTabela(rankData) {
     const tabela = document.querySelector("#tabela-resultados");
   
@@ -91,9 +118,9 @@ function renderizarQuiz(modulo, id_container) {
     }
   }
 
-  renderizarQuiz(HTML, "questionario-html");
-  renderizarQuiz(CSS, "questionario-css");
-  renderizarQuiz(JS, "questionario-js");
+  renderizarQuiz(HTML, "questionario-html", "html");
+  renderizarQuiz(CSS, "questionario-css", "css");
+  renderizarQuiz(JS, "questionario-js", "js");
   dadosTabela(rank);
 
   
