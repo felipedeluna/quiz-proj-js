@@ -3,16 +3,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --cor-background-light:rgb(201, 201, 201);
-    --cor-background-dark:rgb(61, 61, 61);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --cor-background-light: linear-gradient(white, rgba(0, 238, 255, 0.39));
+    --cor-background-dark:linear-gradient(black, rgb(5, 0, 70));
     --cor-background-container-light: white;
-    --cor-background-container-dark: ;
+    --cor-background-container-dark: rgba(1, 0, 22, 0.425);
 }
 body{
     min-height: 100vh;
-    font-family: sans-serif;
-    background-color: var(--cor-background-light);
+    background-image: var(--cor-background-light);
+    transition: 0.3s;
 }
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.bi{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.bi-moon{
+    display: none;
+}
+
+i .dark{
+    display: none;
+}
+
+i .dark{
+    display: block;
+}
+
+#modoDark{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -21,9 +50,30 @@ main{
     min-height: 100vh;
 }
 
+.dark-body{
+    background-image: var(--cor-background-dark);
+    color: white;
+}
+
+.dark-container{
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    border-radius: 25px;
+    color: white;
+    background-color: var(--cor-background-container-dark);
+    box-shadow: 0 0 1em rgb(5, 0, 70);
+}
+
+.dark-text{
+    color: var(--cor-background-container-light);
+}
 h1{
     font-size: 40px;
 }
+
 h2{
     font-size: 30px;
 }
@@ -36,7 +86,7 @@ ul{
 form{
     padding: 20px 0;
 }
-.title h1{
+.title{
     margin: 20px;
 }
 #container-pagina-inicial{
@@ -54,13 +104,24 @@ form{
     display: flex;
     flex-direction: column;
     width: 440px;
+    border-radius: 25px;
     background-color: var(--cor-background-container-light);
+    box-shadow: 0 0 1em rgb(0, 238, 255);
 
 }
-.form-inicial input,.form-inicial select, .form-inicial button{
+#container-pagina-inicial input,#container-pagina-inicial select, #container-pagina-inicial button{
     padding: 10px;
     margin: 10px 0;
+    
 }
+#container-pagina-inicial input,#container-pagina-inicial select{
+    border: 1px solid rgb(0, 89, 95);
+    border-radius: 10px;
+}
+#container-pagina-inicial input[type=text]:focus ,#container-pagina-inicial select:focus{
+    border: 1px solid rgb(0, 89, 95);
+}
+
 .display-none{
     display:none;
 }
