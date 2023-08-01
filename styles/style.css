@@ -12,6 +12,8 @@ body{
     min-height: 100vh;
     font-family: sans-serif;
     background-color: var(--cor-background-light);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    font-family: 'Poppins', sans-serif;
 }
 main{
     display: flex;
@@ -19,6 +21,90 @@ main{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+.player-ctrl {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+i {
+    font-size: 50px;
+    color: white;
+    line-height: 50px;
+    padding: 13px;
+}
+
+.player-ctrl h2 {
+    font-family: sans-serif;
+    padding-left: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+a {
+    background-color: #fb5f70;
+    border-radius: 5px;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+#nomeusu{
+    border-radius: 10px;
+}
+
+#tema{
+    border-radius: 10px;
+}
+
+#btn-iniciar{
+    border-radius: 10px;
+    border-color: rgb(134, 124, 234);
+}
+
+.btn-concluir{
+    border-radius: 10px;
+    border-color: rgb(134, 124, 234);
+}
+
+.btn-voltar-inicio{
+    border-radius: 10px;
+    border-color: rgb(134, 124, 234);
+}
+
+#btn-novo-quiz{
+    border-radius: 10px;
+    border-color: rgb(134, 124, 234);
+}
+
+#btn-iniciar:hover{
+    border-radius: 10px;
+    border-color: rgb(36, 23, 178);
+    transition: 0.5s;
+}
+
+.btn-concluir:hover{
+    border-radius: 10px;
+    border-color: rgb(36, 23, 178);
+    transition: 0.5s;
+}
+
+.btn-voltar-inicio:hover{
+    border-radius: 10px;
+    border-color: rgb(36, 23, 178);
+    transition: 0.5s;
+}
+#btn-novo-quiz:hover{
+    border-radius: 10px;
+    border-color: rgb(36, 23, 178);
+    transition: 0.5s;
 }
 
 h1{
@@ -38,6 +124,7 @@ form{
 }
 .title h1{
     margin: 20px;
+    color: white;
 }
 #container-pagina-inicial{
     border-radius: 35px;
@@ -51,12 +138,25 @@ form{
 .form-inicial{
     margin: 20px auto;
     padding: 20px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     width: 440px;
     background-color: var(--cor-background-container-light);
-
 }
+
+#container-html h2{
+    color: white;
+}
+
+#container-css h2{
+    color: white;
+}
+
+#container-javascript h2{
+    color: white;
+}
+
 .form-inicial input,.form-inicial select, .form-inicial button{
     padding: 10px;
     margin: 10px 0;
@@ -88,6 +188,7 @@ form{
     padding: 10px;
     margin: 5px 0;
     width: 800px;
+    border-radius: 10px;
 }
 
 .questionario{
@@ -126,6 +227,19 @@ form{
     background-color: var(--cor-background-container-light);
     width: 800px;
     min-height: 80vh;
+}
+
+.tabela-resultados, th{
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+table{
+    margin-top: 30px;
+    margin-left: 45px;
+    border-spacing: 0;
 }
 
 #resultados{
