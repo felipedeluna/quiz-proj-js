@@ -3,18 +3,50 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --cor-background-light:rgb(201, 201, 201);
-    --cor-background-dark:rgb(61, 61, 61);
+    font-family: 'Poppins', sans-serif;
+    --cor-background-light: linear-gradient(white, rgba(0, 238, 255, 0.39));
+    --cor-background-dark:linear-gradient(black, rgb(5, 0, 70));
     --cor-background-container-light: white;
-    --cor-background-container-dark: ;
+    --cor-background-container-dark: rgba(1, 0, 22, 0.425);
 }
 body{
     min-height: 100vh;
-    font-family: sans-serif;
-    background-color: var(--cor-background-light);
+    background-image: var(--cor-background-light);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
 }
+
+h2{
+    color: white;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.bi{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.bi-moon{
+    display: none;
+}
+
+i .dark{
+    display: none;
+}
+
+i .dark{
+    display: block;
+}
+
+#modoDark{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -54,7 +86,7 @@ a {
     width: 50px;
     height: 50px;
     cursor: pointer;
-  }
+}
 
 #nomeusu{
     border-radius: 10px;
@@ -107,14 +139,36 @@ a {
     transition: 0.5s;
 }
 
+.dark-body{
+    background-image: var(--cor-background-dark);
+    color: white;
+}
+
+.dark-container{
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    border-radius: 25px;
+    color: white;
+    background-color: var(--cor-background-container-dark);
+    box-shadow: 0 0 1em rgb(5, 0, 70);
+}
+
+.dark-text{
+    color: var(--cor-background-container-light);
+}
 h1{
     font-size: 40px;
 }
+
 h2{
     font-size: 30px;
 }
 button{
     padding: 10px;
+    cursor: pointer;
 }
 ul{
     list-style: none;
@@ -122,7 +176,7 @@ ul{
 form{
     padding: 20px 0;
 }
-.title h1{
+.title{
     margin: 20px;
     color: white;
 }
@@ -142,25 +196,25 @@ form{
     display: flex;
     flex-direction: column;
     width: 440px;
+    border-radius: 25px;
     background-color: var(--cor-background-container-light);
 }
-
-#container-html h2{
-    color: white;
-}
-
-#container-css h2{
-    color: white;
-}
-
 #container-javascript h2{
     color: white;
 }
-
 .form-inicial input,.form-inicial select, .form-inicial button{
     padding: 10px;
     margin: 10px 0;
+    
 }
+#container-pagina-inicial input,#container-pagina-inicial select{
+    border: 1px solid rgb(0, 89, 95);
+    border-radius: 10px;
+}
+#container-pagina-inicial input[type=text]:focus ,#container-pagina-inicial select:focus{
+    border: 1px solid rgb(0, 89, 95);
+}
+
 .display-none{
     display:none;
 }
@@ -273,4 +327,3 @@ table{
 #rankeamento ol {
     list-style-position: inside; /* Coloca a numeração dentro do espaço da div */
 }
-

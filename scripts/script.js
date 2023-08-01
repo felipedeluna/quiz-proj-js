@@ -1,4 +1,3 @@
-import {user, setTempo_para_conclusao, acertou, limparUsuario, salvarResultado} from "./models/usuario.js"
 
 const concluir_html = document.querySelector('#concluir-html')
 
@@ -18,4 +17,6 @@ concluir_html.addEventListener('click', () => {
         console.log(user)
     }}
 })
+
+
 
