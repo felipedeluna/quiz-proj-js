@@ -21,11 +21,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
+    <header>
     <div class="player-ctrl">
-
         <!-- Play Button -->
         <a id="podcast-play" onclick="playShow()"><i class="ion-ios-play"></i></a>
         
@@ -38,20 +40,17 @@
     <audio id="podcast-audio">
         <source src="assets/mp3.mp3" type="audio/mp3">
     </audio>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
 
-<body class="">
-    
-    <main>
-        <div id="modoDark">
+    <div id="modoDark">
         <input type="checkbox" name="mudarTema" id="mudarTema">
         <label for="mudarTema">
             <i class="bi bi-sun"></i>
             <i class="bi bi-moon"></i>
         </label>
-        </div>
+    </div>
+    </header>
+    <main>
+        
         
         <div id="container-pagina-inicial">
             <div class="title">
