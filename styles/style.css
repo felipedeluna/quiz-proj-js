@@ -216,7 +216,7 @@ form{
 }
 
 .display-none{
-    display:none;
+    display: none;
 }
 .container{
     margin:0;
@@ -326,4 +326,12 @@ table{
 
 #rankeamento ol {
     list-style-position: inside; /* Coloca a numeração dentro do espaço da div */
+}
+
+.acertou {
+    background-color: rgb(61, 160, 61);
+}
+
+.errou {
+    background-color: rgb(167, 50, 50);
 }

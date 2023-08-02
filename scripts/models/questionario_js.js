@@ -93,7 +93,7 @@ const JS = [
 ]
 
 const respostas_js = [
-    "dinamismo",
+    "Dinamismo",
     "JavaScript",
     "let minhaVariavel;",
     "Um bloco de código reutilizável que pode ser chamado por seu nome",

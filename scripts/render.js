@@ -121,14 +121,15 @@ btn_concluir.forEach((btn) => {
         } else if(respostasCliente[i] === respostas_css[i]){
           p++
         }
-      }
-
+      }     
       usuario.setAcertos(p)
       usuario.salvarResultado()
       dadosTabela(rank)
 
     } else {
       alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
+
+      
     }
   });
 });
