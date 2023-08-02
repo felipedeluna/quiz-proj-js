@@ -31,6 +31,7 @@ btn_relatorio.forEach((btn) => {
           document.querySelector('input[name="pergunta9"]:checked').value,
           document.querySelector('input[name="pergunta10"]:checked').value,
         ]
+        // Caso as respostas esteja certa ou errada ele pega uma classe e muda de cor
         for(let i = 0; i < 10; i++){
           if(respostasCliente[i] === respostas_html[i]){
             formularioHtml[i].classList.add("acertou")
