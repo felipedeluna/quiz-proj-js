@@ -1,42 +1,42 @@
-import rank from "./models/rank.js";
+import  { rank } from "./models/rank.js";
 
-export function dadosTabela(rank) {
-    const tabela = document.querySelector("#tabela-resultados");
-
-    for (const rank of rankData) {
-        // Renomeando 'rank' para 'rankData'
-        const tabelaEstrutura = `
-        <tr>
-            <td>${rank.nome}</td>
-            <td>${rank.tema}</td>
-            <td>${rank.tempo_para_conclusao}</td>
-            <td>${rank.data}</td>
-            <td>${rank.acertos}/10</td>
-        </tr>
-        `;
-        tabela.innerHTML += tabelaEstrutura;
-    }
-}
 
 // faz a media de todos os dados da tabela e subtrai ela para pegar quantos erros tem, depois imprime os 2
-function medias(users) {
-    let contadorMedia = 0;
-    let pontuacaoTotal = 0;
-    for (const user of users) {
-        contadorMedia++;
-        pontuacaoTotal += user.acertos;
-    }
-    const media = pontuacaoTotal / contadorMedia;
-    const acerto = document.querySelector("#acertos");
-    acerto.innerHTML = `Média de acertos: ${media.toFixed(2)}`;
 
-    const mediaNegativa = 10 - media;
-    const erro = document.querySelector("#erros");
-    erro.innerHTML = `Média de erros: ${mediaNegativa.toFixed(2)}`;
+// ordena por nota e tempo os melhores usuarios
+function ordenarMelhores(usuarios) {
+    return usuarios.sort((a, b) => {
+        if (a.acertos === b.acertos) {
+            return a.tempo_para_conclusao - b.tempo_para_conclusao;
+        }
+        return b.acertos - a.acertos;
+    });
+}
+// pegando cada lista no html
+const listaHtml = document.querySelector(".lista-html");
+const listaCss = document.querySelector(".lista-css");
+const listaJs = document.querySelector(".lista-js");
+
+// essa funcao faz o filtro para que não se repitam diversas vezes, limpa para não duplicar e depois mostra na tela
+function preencherListas() {
+    const usuariosHtml = ordenarMelhores(rank.filter((usuario) => usuario.tema === "html"));
+    const usuariosCss = ordenarMelhores(rank.filter((usuario) => usuario.tema === "css"));
+    const usuariosJs = ordenarMelhores(rank.filter((usuario) => usuario.tema === "javascript"));
+
+    preencherLista(listaHtml, usuariosHtml);
+    preencherLista(listaCss, usuariosCss);
+    preencherLista(listaJs, usuariosJs);
+
+    function preencherLista(lista, usuarios) {
+        lista.innerHTML = ""; // Limpar antes de adicionar outra coisa
+
+        for (const usuario of usuarios) {
+            lista.innerHTML += `<li>${usuario.nome} - ${usuario.acertos} acertos</li>`;
+        }
+    }
 }
 
-function topTemaHtml() {}
 
-function topTemaCss() {}
 
-function topTemaJs() {}
+preencherListas();
+
