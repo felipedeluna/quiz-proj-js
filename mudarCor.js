@@ -33,15 +33,15 @@ btn_relatorio.forEach((btn) => {
         ]
         for(let i = 0; i < 10; i++){
           if(respostasCliente[i] === respostas_html[i]){
-            formularioHtml[i].classList.add("acertou")
+            formularioHtml[i].classList.toggle("acertou")
           } else if(respostasCliente[i] === respostas_css[i]){
-            formularioCss[i].classList.add("acertou")
+            formularioCss[i].classList.toggle("acertou")
           } else if(respostasCliente[i] === respostas_js[i]){
-            formularioJs[i].classList.add("acertou")
+            formularioJs[i].classList.toggle("acertou")
           } else {
-            formularioHtml[i].classList.add("errou")
-            formularioCss[i].classList.add("errou")
-            formularioJs[i].classList.add("errou")
+            formularioHtml[i].classList.toggle("errou")
+            formularioCss[i].classList.toggle("errou")
+            formularioJs[i].classList.toggle("errou")
           }
         }      
       } 
