@@ -2,7 +2,7 @@ import { HTML, respostas_html } from './scripts/models/questionario_html.js'
 import { CSS, respostas_css } from './scripts/models/questionario_css.js'
 import { JS, respostas_js } from './scripts/models/questionario_js.js'
 
-const btn_relatorio = document.querySelectorAll(".btn-relatorio");
+const btn_concluir = document.querySelectorAll(".btn-concluir");
 
 function respostas_foram_respondidas(quiz) {
     const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`);
@@ -15,7 +15,7 @@ const formularioCss = document.querySelectorAll(".quiz-container-css")
 const formularioJs = document.querySelectorAll(".quiz-container-js")
 
 
-btn_relatorio.forEach((btn) => {
+btn_concluir.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
       if (respostas_foram_respondidas(quiz)) {

@@ -183,7 +183,9 @@ form{
 .display-none{
     display: none;
 }
-
+button .display-none-button{
+    display: none;
+}
 .container{
     margin:0;
     padding: 0px;

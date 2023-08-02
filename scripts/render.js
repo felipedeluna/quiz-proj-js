@@ -6,9 +6,7 @@ import { User } from './models/usuario.js'
 
 //Função que renderiza a parte do HTML desejada, removendo todas as outras com o display-none
 
-
 function render(quiz){
-
     // remover todos os quizes da tela
     document.getElementById("container-pagina-inicial").classList.add("display-none")
     document.getElementById("container-html").classList.add("display-none")
@@ -18,7 +16,6 @@ function render(quiz){
     // adiciona apenas o quiz solicitado
     const quiz_container = document.getElementById(`container-${quiz}`)
     quiz_container.classList.remove("display-none");
-
 }
 
 //verificação da página inicial
@@ -27,17 +24,21 @@ let usuario
 
 const btn_iniciar = document.getElementById("btn-iniciar")
 btn_iniciar.addEventListener("click", ()=>{
+    
     const tema = document.getElementById("tema").value
     const nome = document.querySelector("#nomeusu").value
     if( tema == "null"){
       window.alert("Selecione um tema válido!")
-    }else if(nome == ""){
+    }
+    if(nome == ""){
       window.alert("Digite o seu nome!")
     }
-    else{
-      usuario = new User(nome, tema, Date.now())
-      render(tema)
+    if(nome != "" && tema != "null"){
+        usuario = new User(nome, tema, Date.now())
+
+        render(tema)
     }
+    btn_relatorio.classList.add("display-none-button")
 })
 
 //botão localizado na página do rank, ele renderiza a seleção dos quizes
@@ -95,12 +96,14 @@ function respostas_foram_respondidas(quiz) {
     return respostas.length === totalPerguntas.length/4;
 }
 
-const btn_concluir = document.querySelectorAll(".btn-concluir");
+const btn_concluir = document.querySelectorAll(".btn-concluir")
 btn_concluir.forEach((btn) => {
   btn.addEventListener("click", () => {
     const quiz = btn.getAttribute("tema");
     if (respostas_foram_respondidas(quiz)) {
       let p = 0
+      btn_concluir.classList.toggle("display-none")
+      btn_relatorio.classList.toggle("display-none")
       const respostasCliente = [
         document.querySelector('input[name="pergunta1"]:checked').value,
         document.querySelector('input[name="pergunta2"]:checked').value,
@@ -120,19 +123,24 @@ btn_concluir.forEach((btn) => {
           p++
         } else if(respostasCliente[i] === respostas_css[i]){
           p++
-        }
+        } 
       }     
       usuario.setAcertos(p)
       usuario.salvarResultado()
-      dadosTabela(rank)
-
     } else {
       alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
-
-      
     }
   });
 });
+
+    //vai para a página de relatórios
+    const btn_relatorio = document.querySelectorAll(".btn-relatorio");
+    btn_relatorio.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        dadosTabela(rank)
+      });
+    });
+
   function dadosTabela(rankData) {
     const tabela = document.querySelector("#tabela-resultados");
     tabela.innerHTML = ""
