@@ -25,6 +25,12 @@ let usuario
 const btn_iniciar = document.getElementById("btn-iniciar")
 btn_iniciar.addEventListener("click", ()=>{
     
+    btn_concluir.forEach(btnR => {
+      btnR.classList.remove("display-none")
+    })
+    btn_relatorio.forEach(btnR => {
+      btnR.classList.add("display-none")
+    })
     const tema = document.getElementById("tema").value
     const nome = document.querySelector("#nomeusu").value
     if( tema == "null"){
@@ -118,6 +124,10 @@ btn_concluir.forEach((btn) => {
       }     
       usuario.setAcertos(p)
       usuario.salvarResultado()
+      btn.classList.add("display-none")
+      btn_relatorio.forEach(btnR => {
+        btnR.classList.remove("display-none")
+      })
     } else {
       alert("Por favor, responda todas as perguntas antes de concluir o quiz.");
     }
