@@ -4,33 +4,33 @@ const CSS = [
         respostas:[
             "Marcação",
             "Estilização",
-            "dinamismo",
-            "tratar dados",
+            "Dinamismo",
+            "Tratar dados",
         ]
     },
     {
         pergunta: "O que significa CSS?",
         respostas: [
-            "Cascading Style Sheets",
             "Computer Style Sheets",
             "Colorful Style Sheets",
             "Creative Style Sheets",
+            "Cascading Style Sheets",
         ],
     },
     {
         pergunta: "Qual é a propriedade usada para alterar a cor do texto em CSS?",
         respostas: [
-            "color",
             "font-color",
             "text-color",
+            "color",
             "text-style",
         ],
     },
     {
         pergunta: "Como selecionar um elemento com a classe 'destaque' em CSS?",
         respostas: [
-            ".destaque",
             "#destaque",
+            ".destaque",
             "&lt;destaque&gt;",
             "*destaque",
         ],
@@ -47,8 +47,8 @@ const CSS = [
     {
         pergunta: "Qual é a propriedade usada para centralizar um elemento em relação ao seu contêiner em CSS?",
         respostas: [
-            "margin: auto;",
             "padding: center;",
+            "margin: auto;",
             "position: center;",
             "align: center;",
         ],
@@ -56,18 +56,18 @@ const CSS = [
     {
         pergunta: "O que faz a propriedade 'display: none' em CSS?",
         respostas: [
-            "Esconde o elemento, tornando-o invisível e ocupando nenhum espaço na página",
             "Remove o elemento da página, mas reserva o espaço ocupado por ele",
             "Aplica uma animação de desvanecimento ao elemento",
+            "Esconde o elemento, tornando-o invisível e ocupando nenhum espaço na página",
             "Aplica uma borda invisível ao elemento",
         ],
     },
     {
         pergunta: "Como arredondar os cantos de um elemento em CSS?",
         respostas: [
-            "border-radius",
             "corner-radius",
             "border-style",
+            "border-radius",
             "corner-style",
         ],
     },
@@ -83,9 +83,9 @@ const CSS = [
     {
         pergunta: "Qual é a propriedade usada para tornar um elemento fixo em relação à janela de visualização em CSS?",
         respostas: [
-            "position: fixed;",
             "position: absolute;",
             "position: relative;",
+            "position: fixed;",
             "position: static;",
         ],
     }

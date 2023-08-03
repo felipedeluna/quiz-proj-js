@@ -2,16 +2,14 @@ var podcastAudio = document.getElementById('podcast-audio');
 var playBtn = document.getElementById('podcast-play');
 var pauseBtn = document.getElementById('podcast-pause');
 
-// Play audio & mostra pause btn
-var playShow = function() {
+playBtn.addEventListener("click", () => {
   podcastAudio.play();
-  playBtn.style.display = "none";
-  pauseBtn.style.display = "inline-block";
-};
+  playBtn.classList.add("display-none");
+  pauseBtn.classList.remove("display-none");
+});
 
-// Pause audio & mostra play btn
-var pauseShow = function() {
+pauseBtn.addEventListener("click", () => {
   podcastAudio.pause();
-  playBtn.style.display = "inline-block";
-  pauseBtn.style.display = "none";
-};
+  pauseBtn.classList.add("display-none");
+  playBtn.classList.remove("display-none");
+});

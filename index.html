@@ -27,31 +27,35 @@
 
 <body>
     <header>
-        <div class="player-ctrl">
+    <!-- <div class="player-ctrl">
+        Play Button
+        <a id="podcast-play" onclick="playShow()"><i class="ion-ios-play"></i></a>
+        
+        Pause Button
+        <a id="podcast-pause" onclick="pauseShow()" style="display:none;"><i class="ion-ios-pause"></i></a>
+    </div> -->
+    <div id="musica">
             <!-- Play Button -->
-            <a id="podcast-play" onclick="playShow()"><i class="ion-ios-play"></i></a>
-
+            <i class="music bi-volume-mute"id="podcast-play"></i>
             <!-- Pause Button -->
-            <a id="podcast-pause" onclick="pauseShow()" style="display:none;"><i class="ion-ios-pause"></i></a>
-            <h2>Play</h2>
-        </div>
+            <i class="music bi-volume-up display-none" id="podcast-pause"></i>
+    </div>
+    <!-- Audio player -->
+    <audio id="podcast-audio" looping>
+        <source src="assets/mp3.mp3" type="audio/mp3">
+    </audio>
 
-        <!-- Audio player -->
-        <audio id="podcast-audio">
-            <source src="assets/mp3.mp3" type="audio/mp3">
-        </audio>
-
-        <div id="modoDark">
-            <input type="checkbox" name="mudarTema" id="mudarTema">
-            <label for="mudarTema">
-                <i class="bi bi-sun"></i>
-                <i class="bi bi-moon"></i>
-            </label>
-        </div>
+    <div id="modoDark">
+        <input type="checkbox" name="mudarTema" id="mudarTema">
+        <label for="mudarTema">
+            <i class="bi bi-sun"></i>
+            <i class="bi bi-moon"></i>
+        </label>
+    </div>
     </header>
     <main>
-
-
+        
+        
         <div id="container-pagina-inicial">
             <div class="title">
                 <h1>Quiz de programação!</h1>
@@ -80,10 +84,8 @@
             </div>
             <div class="botao-quiz">
                 <button class="btn btn-voltar-inicio">Voltar ao inicio</button>
-                <div class="concluir-container">
-                    <button class="btn btn-relatorio display-none">Relatórios</button>
-                    <button class="btn btn-concluir" id="concluir-html" tema="html">Concluir</button>
-                </div>
+                <button class="btn btn-relatorio">Relatórios</button>
+                <button class="btn btn-concluir" id="concluir-html" tema="html">Concluir</button>
             </div>
         </div>
 
@@ -98,10 +100,8 @@
 
             <div class="botao-quiz">
                 <button class="btn btn-voltar-inicio">Voltar ao inicio</button>
-                <div class="concluir-container">
-                    <button class="btn btn-relatorio display-none">Relatórios</button>
-                    <button class="btn btn-concluir" id="concluir-css" tema="css">Concluir</button>
-                </div>
+                <button class="btn btn-relatorio">Relatórios</button>
+                <button class="btn btn-concluir" id="concluir-css" tema="css">Concluir</button>
             </div>
         </div>
 
@@ -115,10 +115,8 @@
 
             <div class="botao-quiz">
                 <button class="btn btn-voltar-inicio">Voltar ao inicio</button>
-                <div class="concluir-container">
-                    <button class="btn btn-relatorio display-none">Relatórios</button>
-                    <button class="btn btn-concluir" id="concluir-js" tema="javascript">Concluir</button>
-                </div>
+                <button class="btn btn-relatorio">Relatórios</button>
+                <button class="btn btn-concluir" id="concluir-js" tema="javascript">Concluir</button>
             </div>
         </div>
 
@@ -126,47 +124,47 @@
 
             <h1>Relatórios</h1>
 
-            <div class="infos-rank">
-                <section id="resultados">
-                    <h2>Resultados</h2>
-                    <table>
-                        <thead>
-                            <th>Nome</th>
-                            <th>Tema</th>
-                            <th>Tempo</th>
-                            <th>Data Quiz</th>
-                            <th>Pontuação</th>
-                        </thead>
-                        <tbody id="tabela-resultados">
+        <div class="infos-rank">
+            <section id="resultados">
+                <h2>Resultados</h2>
+                <table>
+                    <thead>
+                        <th>Nome</th>
+                        <th>Tema</th>
+                        <th>Tempo</th>
+                        <th>Data Quiz</th>
+                        <th>Pontuação</th>
+                    </thead>
+                    <tbody id="tabela-resultados">
 
-                        </tbody>
-                    </table>
-                </section>
-                <section id="medias">
-                    <div>
-                        <p id="acertos"></p>
-                        <p id="erros"></p>
-                    </div>
-                </section>
-                <section id="rankeamento">
-                    <div>
-                        <h3>HTML</h3>
-                        <ol class="lista-html">
+                    </tbody>
+                </table>
+            </section>
+            <section id="medias">
+                <div>
+                    <p id="acertos"></p>
+                    <p id="erros"></p>
+                </div>
+            </section>
+            <section id="rankeamento">
+                <div>
+                    <h3>HTML</h3>
+                    <ol class="lista-html">
 
-                        </ol>
-                    </div>
-                    <div>
-                        <h3>CSS</h3>
-                        <ol class="lista-css">
-                        </ol>
-                    </div>
-                    <div>
-                        <h3>JS</h3>
-                        <ol class="lista-js">
-                        </ol>
-                    </div>
-                </section>
-            </div>
+                    </ol>
+                </div>
+                <div>
+                    <h3>CSS</h3>
+                    <ol class="lista-css">
+                    </ol>
+                </div>
+                <div>
+                    <h3>JS</h3>
+                    <ol class="lista-js">
+                    </ol>
+                </div>
+            </section>
+        </div>
             <button class="btn" id="btn-novo-quiz">Novo Quiz</button>
         </div>
     </main>
