@@ -60,8 +60,6 @@ function respostas_foram_respondidas(quiz) {
     return respostas.length === totalPerguntas.length/4;
 }
 
-
-
 function mudarCorRespostas(quiz){
       if (respostas_foram_respondidas(quiz)) {
         const respostasCliente = [
@@ -124,7 +122,17 @@ function removerCorRespostas(quiz){
   }
 
 //Reinicia os inputs checked
+
 btn_relatorio.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const inputs = document.querySelectorAll('input[type="radio"][name^="pergunta"]');
+    
+      inputs.forEach(input => {
+        input.checked = false;
+      });
+    });
+  });
+btn_voltar_inicio.forEach((btn) => {
     btn.addEventListener("click", () => {
       const inputs = document.querySelectorAll('input[type="radio"][name^="pergunta"]');
     

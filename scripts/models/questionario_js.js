@@ -1,19 +1,10 @@
 const JS = [
     {
-        pergunta: "Para que serve o JS",
-        respostas:[
-            "Marcação",
-            "Estilização",
-            "Dinamismo",
-            "Tratar dados",
-        ]
-    },
-    {
         pergunta: "O que significa a sigla 'JS'?",
         respostas: [
-            "JavaScript",
             "Just Saying",
             "JavaSuper",
+            "JavaScript",
             "Jolly Sunshine",
         ],
     },
@@ -29,8 +20,8 @@ const JS = [
     {
         pergunta: "O que é uma função em JavaScript?",
         respostas: [
-            "Um bloco de código reutilizável que pode ser chamado por seu nome",
             "Um elemento HTML",
+            "Um bloco de código reutilizável que pode ser chamado por seu nome",
             "Uma classe em CSS",
             "Uma imagem estática",
         ],
@@ -38,19 +29,19 @@ const JS = [
     {
         pergunta: "Como imprimir uma mensagem no console em JavaScript?",
         respostas: [
-            "console.log('Minha mensagem');",
             "print('Minha mensagem');",
             "log('Minha mensagem');",
             "print.log('Minha mensagem');",
+            "console.log('Minha mensagem');",
         ],
     },
     {
         pergunta: "Qual método é usado para adicionar um elemento ao final de um array em JavaScript?",
         respostas: [
-            "push()",
             "pop()",
             "append()",
             "addToEnd()",
+            "push()",
         ],
     },
     {
@@ -65,17 +56,17 @@ const JS = [
     {
         pergunta: "Qual método é usado para converter uma string em um número inteiro em JavaScript?",
         respostas: [
-            "parseInt()",
             "stringToInt()",
             "toInteger()",
+            "parseInt()",
             "parseInteger()",
         ],
     },
     {
         pergunta: "O que é uma arrow function em JavaScript?",
         respostas: [
-            "Uma sintaxe mais curta para declarar funções",
             "Uma função que lança erros (exceptions) em situações específicas",
+            "Uma sintaxe mais curta para declarar funções",
             "Uma função que só pode ser chamada uma vez",
             "Uma função que não aceita argumentos",
         ],
@@ -88,12 +79,20 @@ const JS = [
             "while",
             "repeat",
         ],
+    },
+    {
+        pergunta: "Como você pode verificar se uma variável é do tipo número (number) em JavaScript?",
+        respostas: [
+            "isNumber(myVariable)",
+            "typeof myVariable === 'number'",
+            "myVariable.type === 'number'",
+            "myVariable.isNumber()",
+        ],
     }
 
 ]
 
 const respostas_js = [
-    "Dinamismo",
     "JavaScript",
     "let minhaVariavel;",
     "Um bloco de código reutilizável que pode ser chamado por seu nome",
@@ -102,7 +101,8 @@ const respostas_js = [
     "Document Object Model - representa a estrutura de uma página HTML e permite interagir com ela",
     "parseInt()",
     "Uma sintaxe mais curta para declarar funções",
-    "for"
+    "for",
+    "typeof myVariable === 'number'"
 ]
 
 export {JS, respostas_js}
