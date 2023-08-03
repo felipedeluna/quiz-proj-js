@@ -48,6 +48,9 @@ btn_voltar_inicio.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
       removerCorRespostas(quiz);
+      formularioHtml.forEach(habilitarInputs);
+      formularioCss.forEach(habilitarInputs);
+      formularioJs.forEach(habilitarInputs);
     });
   });
 
