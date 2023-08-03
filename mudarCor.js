@@ -6,10 +6,32 @@ const btn_concluir = document.querySelectorAll(".btn-concluir");
 const btn_relatorio = document.querySelectorAll(".btn-relatorio");
 const btn_voltar_inicio = document.querySelectorAll(".btn-voltar-inicio");
 
+const formularioHtml = document.querySelectorAll(".quiz-container-html")
+const formularioCss = document.querySelectorAll(".quiz-container-css")
+const formularioJs = document.querySelectorAll(".quiz-container-js")
+
+function desabilitarInputs(formulario) {
+  const inputs = formulario.querySelectorAll("input");
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].disabled = true;
+  }
+}
+
+function habilitarInputs(formulario) {
+  const inputs = formulario.querySelectorAll("input");
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].disabled = false;
+  }
+}
+
+
 btn_concluir.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
       mudarCorRespostas(quiz);
+      formularioHtml.forEach(desabilitarInputs);
+      formularioCss.forEach(desabilitarInputs);
+      formularioJs.forEach(desabilitarInputs);
     });
   });
 
@@ -17,12 +39,18 @@ btn_relatorio.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
       removerCorRespostas(quiz);
+      formularioHtml.forEach(habilitarInputs);
+      formularioCss.forEach(habilitarInputs);
+      formularioJs.forEach(habilitarInputs);
     });
   });
 btn_voltar_inicio.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
       removerCorRespostas(quiz);
+      formularioHtml.forEach(habilitarInputs);
+      formularioCss.forEach(habilitarInputs);
+      formularioJs.forEach(habilitarInputs);
     });
   });
 
@@ -32,9 +60,7 @@ function respostas_foram_respondidas(quiz) {
     return respostas.length === totalPerguntas.length/4;
 }
 
-const formularioHtml = document.querySelectorAll(".quiz-container-html")
-const formularioCss = document.querySelectorAll(".quiz-container-css")
-const formularioJs = document.querySelectorAll(".quiz-container-js")
+
 
 function mudarCorRespostas(quiz){
       if (respostas_foram_respondidas(quiz)) {

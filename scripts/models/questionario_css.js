@@ -2,8 +2,8 @@ const CSS = [
     {
         pergunta: "Para que serve o CSS",
         respostas:[
-            "marcação",
-            "estilização",
+            "Marcação",
+            "Estilização",
             "dinamismo",
             "tratar dados",
         ]
@@ -92,7 +92,7 @@ const CSS = [
 ]
 
 const respostas_css = [
-    "estilização",
+    "Estilização",
     "Cascading Style Sheets",
     "color",
     ".destaque",
