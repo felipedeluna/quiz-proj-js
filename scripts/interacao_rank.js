@@ -18,7 +18,7 @@ const listaCss = document.querySelector(".lista-css");
 const listaJs = document.querySelector(".lista-js");
 
 // essa funcao faz o filtro para que não se repitam diversas vezes, limpa para não duplicar e depois mostra na tela
-function preencherListas() {
+export function preencherListas() {
     const usuariosHtml = ordenarMelhores(rank.filter((usuario) => usuario.tema === "html"));
     const usuariosCss = ordenarMelhores(rank.filter((usuario) => usuario.tema === "css"));
     const usuariosJs = ordenarMelhores(rank.filter((usuario) => usuario.tema === "javascript"));
@@ -37,6 +37,4 @@ function preencherListas() {
 }
 
 
-
-preencherListas();
 

@@ -3,6 +3,7 @@ import { CSS, respostas_css } from './models/questionario_css.js'
 import { JS, respostas_js } from './models/questionario_js.js'
 import { rank } from './models/rank.js'
 import { User } from './models/usuario.js'
+import { preencherListas } from './interacao_rank.js'
 
 //Função que renderiza a parte do HTML desejada, removendo todas as outras com o display-none
 
@@ -163,7 +164,9 @@ function respostas_foram_respondidas(quiz) {
       `;
       tabela.innerHTML += tabelaEstrutura;
     }
+    preencherListas()
     render("rank");
+    
   }
 
   renderizarQuiz(HTML, "questionario-html", "html");
