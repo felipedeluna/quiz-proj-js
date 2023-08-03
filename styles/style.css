@@ -236,6 +236,7 @@ form{
 .botao-quiz{
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 #container-rank h1{
@@ -308,4 +309,9 @@ margin: 0;
 .errou {
     background-color: rgb(167, 50, 50);
     color: white;
+}
+.concluir-container button{
+    position: absolute;
+    right: 0;
+    bottom: 5px;
 }
