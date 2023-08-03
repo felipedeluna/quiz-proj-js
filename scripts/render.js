@@ -115,11 +115,11 @@ btn_concluir.forEach((btn) => {
         document.querySelector('input[name="pergunta10"]:checked').value,
       ]
       for(let i = 0; i < 10; i++){
-        if(respostasCliente[i] === respostas_js[i]){
-          p++
-        } else if(respostasCliente[i] === respostas_html[i]){
+        if(respostasCliente[i] === respostas_html[i]){
           p++
         } else if(respostasCliente[i] === respostas_css[i]){
+          p++
+        } else if(respostasCliente[i] === respostas_js[i]){
           p++
         } 
       }     
