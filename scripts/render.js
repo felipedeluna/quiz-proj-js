@@ -38,7 +38,6 @@ btn_iniciar.addEventListener("click", ()=>{
 
         render(tema)
     }
-    btn_relatorio.classList.add("display-none-button")
 })
 
 //botão localizado na página do rank, ele renderiza a seleção dos quizes
@@ -88,22 +87,14 @@ function renderizarQuiz(modulo, id_container, tema) {
     
   }
 
-  //botão localizado na página do quiz, ele finaliza o quiz e renderiza a página dos ranks
-
-function respostas_foram_respondidas(quiz) {
-    const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`);
-    const totalPerguntas = document.querySelectorAll(`#container-${quiz} input[type="radio"]`);
-    return respostas.length === totalPerguntas.length/4;
-}
-
+  //botão localizado na página do quiz, ele finaliza o quiz
 const btn_concluir = document.querySelectorAll(".btn-concluir")
+
 btn_concluir.forEach((btn) => {
   btn.addEventListener("click", () => {
     const quiz = btn.getAttribute("tema");
     if (respostas_foram_respondidas(quiz)) {
       let p = 0
-      btn_concluir.classList.toggle("display-none")
-      btn_relatorio.classList.toggle("display-none")
       const respostasCliente = [
         document.querySelector('input[name="pergunta1"]:checked').value,
         document.querySelector('input[name="pergunta2"]:checked').value,
@@ -132,8 +123,13 @@ btn_concluir.forEach((btn) => {
     }
   });
 });
+function respostas_foram_respondidas(quiz) {
+    const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`);
+    const totalPerguntas = document.querySelectorAll(`#container-${quiz} input[type="radio"]`);
+    return respostas.length === totalPerguntas.length/4;
+};
 
-    //vai para a página de relatórios
+//botão localizado na página do quiz, ele vai para a página de relatórios
     const btn_relatorio = document.querySelectorAll(".btn-relatorio");
     btn_relatorio.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -157,7 +153,6 @@ btn_concluir.forEach((btn) => {
       `;
       tabela.innerHTML += tabelaEstrutura;
     }
-
     render("rank");
   }
 

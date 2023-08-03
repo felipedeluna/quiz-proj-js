@@ -3,6 +3,21 @@ import { CSS, respostas_css } from './scripts/models/questionario_css.js'
 import { JS, respostas_js } from './scripts/models/questionario_js.js'
 
 const btn_concluir = document.querySelectorAll(".btn-concluir");
+const btn_relatorio = document.querySelectorAll(".btn-relatorio");
+
+btn_concluir.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const quiz = btn.getAttribute("tema");
+      mudarCorRespostas(quiz);
+    });
+  });
+
+btn_relatorio.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const quiz = btn.getAttribute("tema");
+      mudarCorRespostas(quiz);
+    });
+  });
 
 function respostas_foram_respondidas(quiz) {
     const respostas = document.querySelectorAll(`#container-${quiz} input[type="radio"]:checked`);
@@ -14,10 +29,7 @@ const formularioHtml = document.querySelectorAll(".quiz-container-html")
 const formularioCss = document.querySelectorAll(".quiz-container-css")
 const formularioJs = document.querySelectorAll(".quiz-container-js")
 
-
-btn_concluir.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const quiz = btn.getAttribute("tema");
+function mudarCorRespostas(quiz){
       if (respostas_foram_respondidas(quiz)) {
         const respostasCliente = [
           document.querySelector('input[name="pergunta1"]:checked').value,
@@ -46,8 +58,15 @@ btn_concluir.forEach((btn) => {
           }
         }      
       } 
+  }
+
+//Reinicia os inputs checked
+btn_relatorio.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const inputs = document.querySelectorAll('input[type="radio"][name^="pergunta"]');
+    
+      inputs.forEach(input => {
+        input.checked = false;
+      });
     });
   });
-
-
-
