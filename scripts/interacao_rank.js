@@ -37,4 +37,30 @@ export function preencherListas() {
 }
 
 
+function medias(rank, acertos) {
+    let contadorMedia = 0;
+    let pontuacaoTotal = 0;
+    let media = 0;
+    for (const user of rank) {
+        contadorMedia++;
+        pontuacaoTotal += user.acertos;
+        media = pontuacaoTotal/contadorMedia;
+    }
+        contadorMedia++;
+        pontuacaoTotal += acertos;
 
+    function mediaErros() {
+        const media = pontuacaoTotal / contadorMedia;
+        const acerto = document.querySelector("#acertos");
+        acerto.innerHTML = `Média de acertos: ${media.toFixed(2)}`;
+
+        const mediaNegativa = 10 - media;
+        const erro = document.querySelector("#erros");
+        erro.innerHTML = `Média de erros: ${mediaNegativa.toFixed(2)}`;
+    }
+    mediaErros(medias)
+}
+
+medias(rank)
+
+export { medias }

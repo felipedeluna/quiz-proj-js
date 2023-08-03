@@ -4,6 +4,7 @@ import { JS, respostas_js } from './models/questionario_js.js'
 import { rank } from './models/rank.js'
 import { User } from './models/usuario.js'
 import { preencherListas } from './interacao_rank.js'
+import { medias } from './interacao_rank.js'
 
 //Função que renderiza a parte do HTML desejada, removendo todas as outras com o display-none
 
@@ -123,6 +124,7 @@ btn_concluir.forEach((btn) => {
           p++
         } 
       }     
+      medias(rank, p)
       usuario.setAcertos(p)
       usuario.salvarResultado()
       btn.classList.add("display-none")
