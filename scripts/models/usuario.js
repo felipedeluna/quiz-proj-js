@@ -14,7 +14,7 @@ export class User {
 
   setTempo_para_conclusao() {
     const tempo = Math.abs(Date.now() - this.tempo_de_inicio) // Resultado em milissegundos
-    const segundos = Math.floor(tempo / 1000)
+    const segundos = Math.floor(tempo / 1000)+1
     const minutos = Math.floor(segundos / 60)
 
     this.tempo_para_conclusao = `${minutos}:${segundos}`
