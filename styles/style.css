@@ -248,6 +248,7 @@ table{
     margin-top: 30px;
     margin-left: 45px;
     border-spacing: 0;
+    text-align: center;
 }
 
 #resultados{
@@ -300,4 +301,19 @@ margin: 0;
     position: absolute;
     right: 0;
     bottom: 5px;
+}
+
+
+#acertos {
+    margin-top: 20px;
+    color: rgb(54, 165, 54);
+    font-size: 20px;
+    text-align: center;
+}
+
+#erros {
+    margin: 20px 0;
+    color: red;
+    font-size: 20px;
+    text-align: center;
 }
