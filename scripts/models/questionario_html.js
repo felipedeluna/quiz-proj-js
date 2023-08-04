@@ -10,12 +10,7 @@ const HTML = [
     },
     {
         pergunta: "Qual é a tag usada para criar um link em HTML?",
-        respostas: [
-            "&lt;a&gt;",
-            "&lt;href&gt;",
-            "&lt;url&gt;",
-            "&lt;link&gt;",
-        ],
+        respostas: ["&lt;a&gt;", "&lt;href&gt;", "&lt;url&gt;", "&lt;link&gt;"],
     },
     {
         pergunta: "O que significa a sigla HTML?",
@@ -28,15 +23,11 @@ const HTML = [
     },
     {
         pergunta: "Qual é a versão mais recente do HTML?",
-        respostas: [
-            "HTMLX",
-            "HTML2023",
-            "HTML5",
-            "HTMLNext",
-        ],
+        respostas: ["HTMLX", "HTML2023", "HTML5", "HTMLNext"],
     },
     {
-        pergunta: "Quais são as tags usadas para criar listas não ordenadas e ordenadas em HTML?",
+        pergunta:
+            "Quais são as tags usadas para criar listas não ordenadas e ordenadas em HTML?",
         respostas: [
             "&lt;li&gt; e &lt;ol&gt;",
             "&lt;ul&gt; e &lt;li&gt;",
@@ -45,7 +36,8 @@ const HTML = [
         ],
     },
     {
-        pergunta: "Qual é a tag usada para inserir uma imagem em uma página HTML?",
+        pergunta:
+            "Qual é a tag usada para inserir uma imagem em uma página HTML?",
         respostas: [
             "&lt;img&gt;",
             "&lt;src&gt;",
@@ -88,20 +80,20 @@ const HTML = [
             "&lt;input&gt;",
             "&lt;fieldset&gt;",
         ],
-    }
+    },
 ];
 
-const respostas_html = [ 
-    '<table></table>', 
-    '<link>', 
-    'HyperText Markup Language', 
-    'HTML5', 
-    '<ul> e <ol>', 
-    '<img>', 
-    'Uma divisão genérica que pode ser usada para agrupar outros elementos', 
-    '<header>', 
-    '\x3C!-- Comentário -->',
-    '<form>']
+const respostas_html = [
+    "<table></table>",
+    "<link>",
+    "HyperText Markup Language",
+    "HTML5",
+    "<ul> e <ol>",
+    "<img>",
+    "Uma divisão genérica que pode ser usada para agrupar outros elementos",
+    "<header>",
+    "\x3C!-- Comentário -->",
+    "<form>",
+];
 
-
-export {HTML, respostas_html}
+export { HTML, respostas_html };

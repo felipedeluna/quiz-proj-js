@@ -1,15 +1,11 @@
 const JS = [
     {
         pergunta: "O que significa a sigla 'JS'?",
-        respostas: [
-            "Just Saying",
-            "JavaSuper",
-            "JavaScript",
-            "Jolly Sunshine",
-        ],
+        respostas: ["Just Saying", "JavaSuper", "JavaScript", "Jolly Sunshine"],
     },
     {
-        pergunta: "Qual é a forma correta de declarar uma variável em JavaScript?",
+        pergunta:
+            "Qual é a forma correta de declarar uma variável em JavaScript?",
         respostas: [
             "let minhaVariavel;",
             "variable minhaVariavel;",
@@ -36,13 +32,9 @@ const JS = [
         ],
     },
     {
-        pergunta: "Qual método é usado para adicionar um elemento ao final de um array em JavaScript?",
-        respostas: [
-            "pop()",
-            "append()",
-            "addToEnd()",
-            "push()",
-        ],
+        pergunta:
+            "Qual método é usado para adicionar um elemento ao final de um array em JavaScript?",
+        respostas: ["pop()", "append()", "addToEnd()", "push()"],
     },
     {
         pergunta: "O que é o DOM em JavaScript?",
@@ -54,7 +46,8 @@ const JS = [
         ],
     },
     {
-        pergunta: "Qual método é usado para converter uma string em um número inteiro em JavaScript?",
+        pergunta:
+            "Qual método é usado para converter uma string em um número inteiro em JavaScript?",
         respostas: [
             "stringToInt()",
             "toInteger()",
@@ -73,24 +66,19 @@ const JS = [
     },
     {
         pergunta: "Qual declaração é usada para criar um loop em JavaScript?",
-        respostas: [
-            "for",
-            "loop",
-            "while",
-            "repeat",
-        ],
+        respostas: ["for", "loop", "while", "repeat"],
     },
     {
-        pergunta: "Como você pode verificar se uma variável é do tipo número (number) em JavaScript?",
+        pergunta:
+            "Como você pode verificar se uma variável é do tipo número (number) em JavaScript?",
         respostas: [
             "isNumber(myVariable)",
             "typeof myVariable === 'number'",
             "myVariable.type === 'number'",
             "myVariable.isNumber()",
         ],
-    }
-
-]
+    },
+];
 
 const respostas_js = [
     "JavaScript",
@@ -102,7 +90,7 @@ const respostas_js = [
     "parseInt()",
     "Uma sintaxe mais curta para declarar funções",
     "for",
-    "typeof myVariable === 'number'"
-]
+    "typeof myVariable === 'number'",
+];
 
-export {JS, respostas_js}
+export { JS, respostas_js };

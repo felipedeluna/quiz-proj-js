@@ -1,5 +1,4 @@
-import  { rank } from "./models/rank.js";
-
+import { rank } from "./models/rank.js";
 
 // faz a media de todos os dados da tabela e subtrai ela para pegar quantos erros tem, depois imprime os 2
 
@@ -19,9 +18,15 @@ const listaJs = document.querySelector(".lista-js");
 
 // essa funcao faz o filtro para que não se repitam diversas vezes, limpa para não duplicar e depois mostra na tela
 export function preencherListas() {
-    const usuariosHtml = ordenarMelhores(rank.filter((usuario) => usuario.tema === "html"));
-    const usuariosCss = ordenarMelhores(rank.filter((usuario) => usuario.tema === "css"));
-    const usuariosJs = ordenarMelhores(rank.filter((usuario) => usuario.tema === "javascript"));
+    const usuariosHtml = ordenarMelhores(
+        rank.filter((usuario) => usuario.tema === "html")
+    );
+    const usuariosCss = ordenarMelhores(
+        rank.filter((usuario) => usuario.tema === "css")
+    );
+    const usuariosJs = ordenarMelhores(
+        rank.filter((usuario) => usuario.tema === "javascript")
+    );
 
     preencherLista(listaHtml, usuariosHtml);
     preencherLista(listaCss, usuariosCss);
@@ -36,7 +41,6 @@ export function preencherListas() {
     }
 }
 
-
 function medias(rank, acertos) {
     let contadorMedia = 0;
     let pontuacaoTotal = 0;
@@ -44,10 +48,10 @@ function medias(rank, acertos) {
     for (const user of rank) {
         contadorMedia++;
         pontuacaoTotal += user.acertos;
-        media = pontuacaoTotal/contadorMedia;
+        media = pontuacaoTotal / contadorMedia;
     }
-        contadorMedia++;
-        pontuacaoTotal += acertos;
+    contadorMedia++;
+    pontuacaoTotal += acertos;
 
     function mediaErros() {
         const media = pontuacaoTotal / contadorMedia;
@@ -58,9 +62,9 @@ function medias(rank, acertos) {
         const erro = document.querySelector("#erros");
         erro.innerHTML = `Média de erros: ${mediaNegativa.toFixed(2)}`;
     }
-    mediaErros(medias)
+    mediaErros(medias);
 }
 
-medias(rank)
+medias(rank);
 
-export { medias }
+export { medias };
