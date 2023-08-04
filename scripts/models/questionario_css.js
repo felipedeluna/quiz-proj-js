@@ -1,12 +1,7 @@
 const CSS = [
     {
         pergunta: "Para que serve o CSS",
-        respostas:[
-            "Marcação",
-            "Estilização",
-            "Dinamismo",
-            "Tratar dados",
-        ]
+        respostas: ["Marcação", "Estilização", "Dinamismo", "Tratar dados"],
     },
     {
         pergunta: "O que significa CSS?",
@@ -18,25 +13,17 @@ const CSS = [
         ],
     },
     {
-        pergunta: "Qual é a propriedade usada para alterar a cor do texto em CSS?",
-        respostas: [
-            "font-color",
-            "text-color",
-            "color",
-            "text-style",
-        ],
+        pergunta:
+            "Qual é a propriedade usada para alterar a cor do texto em CSS?",
+        respostas: ["font-color", "text-color", "color", "text-style"],
     },
     {
         pergunta: "Como selecionar um elemento com a classe 'destaque' em CSS?",
-        respostas: [
-            "#destaque",
-            ".destaque",
-            "&lt;destaque&gt;",
-            "*destaque",
-        ],
+        respostas: ["#destaque", ".destaque", "&lt;destaque&gt;", "*destaque"],
     },
     {
-        pergunta: "Qual é a propriedade usada para adicionar espaçamento entre as letras do texto em CSS?",
+        pergunta:
+            "Qual é a propriedade usada para adicionar espaçamento entre as letras do texto em CSS?",
         respostas: [
             "letter-spacing",
             "line-height",
@@ -45,7 +32,8 @@ const CSS = [
         ],
     },
     {
-        pergunta: "Qual é a propriedade usada para centralizar um elemento em relação ao seu contêiner em CSS?",
+        pergunta:
+            "Qual é a propriedade usada para centralizar um elemento em relação ao seu contêiner em CSS?",
         respostas: [
             "padding: center;",
             "margin: auto;",
@@ -72,7 +60,8 @@ const CSS = [
         ],
     },
     {
-        pergunta: "Qual é a propriedade usada para definir a sombra de um elemento em CSS?",
+        pergunta:
+            "Qual é a propriedade usada para definir a sombra de um elemento em CSS?",
         respostas: [
             "box-shadow",
             "text-shadow",
@@ -81,15 +70,16 @@ const CSS = [
         ],
     },
     {
-        pergunta: "Qual é a propriedade usada para tornar um elemento fixo em relação à janela de visualização em CSS?",
+        pergunta:
+            "Qual é a propriedade usada para tornar um elemento fixo em relação à janela de visualização em CSS?",
         respostas: [
             "position: absolute;",
             "position: relative;",
             "position: fixed;",
             "position: static;",
         ],
-    }
-]
+    },
+];
 
 const respostas_css = [
     "Estilização",
@@ -101,7 +91,7 @@ const respostas_css = [
     "Esconde o elemento, tornando-o invisível e ocupando nenhum espaço na página",
     "border-radius",
     "box-shadow",
-    "position: fixed;"
-]
+    "position: fixed;",
+];
 
-export {CSS, respostas_css}
+export { CSS, respostas_css };
