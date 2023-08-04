@@ -28,29 +28,29 @@ function habilitarInputs(formulario) {
 btn_concluir.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
-      mudarCorRespostas(quiz);
       formularioHtml.forEach(desabilitarInputs);
       formularioCss.forEach(desabilitarInputs);
       formularioJs.forEach(desabilitarInputs);
+      mudarCorRespostas(quiz);
     });
   });
 
 btn_relatorio.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
-      removerCorRespostas(quiz);
       formularioHtml.forEach(habilitarInputs);
       formularioCss.forEach(habilitarInputs);
       formularioJs.forEach(habilitarInputs);
+      removerCorRespostas(quiz);
     });
   });
 btn_voltar_inicio.forEach((btn) => {
     btn.addEventListener("click", () => {
       const quiz = btn.getAttribute("tema");
-      removerCorRespostas(quiz);
       formularioHtml.forEach(habilitarInputs);
       formularioCss.forEach(habilitarInputs);
       formularioJs.forEach(habilitarInputs);
+      removerCorRespostas(quiz);
     });
   });
 
